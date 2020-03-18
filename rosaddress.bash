@@ -67,18 +67,18 @@ function _func_comp_rosaddress(){
 
 
 function _func_rosaddress() {
-    if [ $1 = "local" ]; then
+    if [[ $1 = "local" ]]; then
         _func_roslocal
-    elif [ $1 = "server" ]; then
+    elif [[ $1 = "server" ]]; then
         _func_rosserver $2
-    elif [ $1 = "client" ]; then
+    elif [[ $1 = "client" ]]; then
         _func_rosclient $2 $3
-    elif [ $1 = "exit" ]; then
+    elif [[ $1 = "exit" ]]; then
         _func_rosexit
     fi
 }
 
-_func_rosaddress $1 $2 $3
+# _func_rosaddress $1 $2 $3
 
 function _func_comp_rosaddress(){
     local cur=${COMP_WORDS[COMP_CWORD]}
